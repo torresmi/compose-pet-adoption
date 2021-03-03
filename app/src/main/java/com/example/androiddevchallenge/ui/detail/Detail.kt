@@ -6,7 +6,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.data.Chameleon
 import com.example.androiddevchallenge.data.Species
-import com.example.androiddevchallenge.ui.theme.MyTheme
+import com.example.androiddevchallenge.ui.theme.AppTheme
 import java.util.*
 
 @Composable
@@ -21,7 +21,7 @@ fun Detail(chameleon: Chameleon, navigateUp: () -> Unit) {
 @Preview("Light Theme", widthDp = 360, heightDp = 640)
 @Composable
 private fun LightPreview() {
-    MyTheme {
+    AppTheme {
         Detail(
             chameleon = Chameleon(
                 id = UUID.randomUUID(),
@@ -38,7 +38,7 @@ private fun LightPreview() {
 @Preview("Dark Theme", widthDp = 360, heightDp = 640)
 @Composable
 private fun DarkPreview() {
-    MyTheme(darkTheme = true) {
+    AppTheme(darkTheme = true) {
         Detail(
             chameleon = Chameleon(
                 id = UUID.randomUUID(),

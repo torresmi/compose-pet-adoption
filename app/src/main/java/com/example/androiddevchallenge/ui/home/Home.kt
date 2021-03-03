@@ -3,7 +3,6 @@ package com.example.androiddevchallenge.ui.home
 import android.util.Log
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.GridCells
@@ -13,8 +12,6 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -27,7 +24,7 @@ import com.example.androiddevchallenge.data.Chameleon
 import com.example.androiddevchallenge.data.Species
 import com.example.androiddevchallenge.ui.PrimaryText
 import com.example.androiddevchallenge.ui.SecondaryText
-import com.example.androiddevchallenge.ui.theme.MyTheme
+import com.example.androiddevchallenge.ui.theme.AppTheme
 import com.example.androiddevchallenge.ui.theme.gray200
 import com.example.androiddevchallenge.ui.theme.gray700
 import java.util.*
@@ -113,7 +110,7 @@ private fun Item(darkTheme: Boolean, item: Chameleon, openDetail: (UUID) -> Unit
 @Preview("Light Theme", widthDp = 360, heightDp = 640)
 @Composable
 private fun LightPreview() {
-    MyTheme {
+    AppTheme {
         Home(
             darkTheme = false,
             chameleons = listOf(
@@ -133,7 +130,7 @@ private fun LightPreview() {
 @Preview("Dark Theme", widthDp = 360, heightDp = 640)
 @Composable
 private fun DarkPreview() {
-    MyTheme {
+    AppTheme {
         Home(
             darkTheme = true,
             chameleons = listOf(

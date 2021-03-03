@@ -12,7 +12,7 @@ import com.example.androiddevchallenge.Route
 import com.example.androiddevchallenge.data.CHAMELEONS
 import com.example.androiddevchallenge.ui.detail.Detail
 import com.example.androiddevchallenge.ui.home.Home
-import com.example.androiddevchallenge.ui.theme.MyTheme
+import com.example.androiddevchallenge.ui.theme.AppTheme
 import java.util.*
 
 @Composable
@@ -20,7 +20,7 @@ fun ChameleonAdoptionApp(darkTheme: Boolean) {
     val navController = rememberNavController()
     val navActions = remember(navController) { NavigationActions(navController) }
 
-    MyTheme(darkTheme = darkTheme) {
+    AppTheme(darkTheme = darkTheme) {
         NavHost(navController, startDestination = Route.Home.path) {
             composable(Route.Home.path) {
                 Home(
