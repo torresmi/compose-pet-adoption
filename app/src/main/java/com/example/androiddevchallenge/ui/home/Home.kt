@@ -24,11 +24,12 @@ import com.example.androiddevchallenge.ui.PrimaryText
 import com.example.androiddevchallenge.ui.SecondaryText
 import com.example.androiddevchallenge.ui.theme.MyTheme
 import com.example.androiddevchallenge.ui.theme.gray200
+import com.example.androiddevchallenge.ui.theme.gray700
 import java.util.*
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun Home(chameleons: List<Chameleon>) {
+fun Home(darkTheme: Boolean, chameleons: List<Chameleon>) {
     MaterialTheme {
         Scaffold(
             topBar = {
@@ -48,7 +49,7 @@ fun Home(chameleons: List<Chameleon>) {
                     cells = GridCells.Fixed(2),
                 ) {
                     items(chameleons) { item: Chameleon ->
-                        Item(item)
+                        Item(darkTheme, item)
                     }
                 }
             }
@@ -57,7 +58,7 @@ fun Home(chameleons: List<Chameleon>) {
 }
 
 @Composable
-private fun Item(item: Chameleon) {
+private fun Item(darkTheme: Boolean, item: Chameleon) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -79,7 +80,7 @@ private fun Item(item: Chameleon) {
                 contentScale = ContentScale.FillWidth,
             )
 
-            Divider(color = gray200)
+            Divider(color = if (darkTheme) gray700 else gray200)
 
             PrimaryText(
                 text = item.name,
@@ -105,7 +106,8 @@ private fun Item(item: Chameleon) {
 private fun LightPreview() {
     MyTheme {
         Home(
-            listOf(
+            darkTheme = false,
+            chameleons = listOf(
                 Chameleon(
                     id = UUID.randomUUID(),
                     name = "Frodo",
@@ -123,7 +125,8 @@ private fun LightPreview() {
 private fun DarkPreview() {
     MyTheme(darkTheme = true) {
         Home(
-            listOf(
+            darkTheme = true,
+            chameleons = listOf(
                 Chameleon(
                     id = UUID.randomUUID(),
                     name = "Frodo",
