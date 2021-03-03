@@ -91,7 +91,7 @@ private fun Details(chameleon: Chameleon) {
             Divider()
 
             InfoItem(
-                Icons.Default.PushPin,
+                Icons.Default.LocationCity,
                 R.string.detail_location_title,
                 chameleon.location
             )
