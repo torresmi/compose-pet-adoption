@@ -76,7 +76,8 @@ fun Detail(chameleon: Chameleon, navigateUp: () -> Unit) {
                         Icon(Icons.Default.ArrowBack, contentDescription = null)
                     }
                 },
-                elevation = 0.dp
+                elevation = 0.dp,
+                backgroundColor = MaterialTheme.colors.primary,
             )
         },
         content = {
