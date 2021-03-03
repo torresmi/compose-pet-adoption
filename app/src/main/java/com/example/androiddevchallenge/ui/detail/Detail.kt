@@ -7,10 +7,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.PushPin
-import androidx.compose.material.icons.filled.VerifiedUser
+import androidx.compose.material.icons.filled.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -26,6 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.data.Chameleon
+import com.example.androiddevchallenge.data.Gender
 import com.example.androiddevchallenge.data.Species
 import com.example.androiddevchallenge.ui.PrimaryText
 import com.example.androiddevchallenge.ui.SecondaryText
@@ -78,6 +76,17 @@ private fun Details(chameleon: Chameleon) {
                 Icons.Default.VerifiedUser,
                 R.string.detail_species_title,
                 chameleon.species.prettyPrint()
+            )
+            Divider()
+
+            val genderIcon = when (chameleon.gender) {
+                Gender.MALE -> Icons.Default.Male
+                Gender.FEMALE -> Icons.Default.Female
+            }
+            InfoItem(
+                genderIcon,
+                R.string.detail_gender_title,
+                chameleon.gender.prettyPrint()
             )
             Divider()
 
@@ -155,6 +164,7 @@ private fun LightPreview() {
                 location = "Rivendell",
                 species = Species.PANTHER,
                 image = R.drawable.ic_chameleon_one,
+                gender = Gender.MALE
             ),
             navigateUp = {}
         )
@@ -172,6 +182,7 @@ private fun DarkPreview() {
                 location = "Rivendell",
                 species = Species.PANTHER,
                 image = R.drawable.ic_chameleon_one,
+                gender = Gender.FEMALE
             ),
             navigateUp = {}
         )

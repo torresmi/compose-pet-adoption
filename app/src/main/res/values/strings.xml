@@ -13,4 +13,5 @@
     <string name="home_title">Chameleon Adoption</string>
     <string name="detail_location_title">Location</string>
     <string name="detail_species_title">Species</string>
+    <string name="detail_gender_title">Gender</string>
 </resources>

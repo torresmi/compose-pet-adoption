@@ -25,6 +25,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.data.Chameleon
+import com.example.androiddevchallenge.data.Gender
 import com.example.androiddevchallenge.data.Species
 import com.example.androiddevchallenge.ui.PrimaryText
 import com.example.androiddevchallenge.ui.SecondaryText
@@ -124,6 +125,7 @@ private fun LightPreview() {
                     location = "Rivendell",
                     species = Species.PANTHER,
                     image = R.drawable.ic_chameleon_one,
+                    gender = Gender.MALE
                 )
             ),
             openDetail = {}
@@ -144,6 +146,7 @@ private fun DarkPreview() {
                     location = "Rivendell",
                     species = Species.PANTHER,
                     image = R.drawable.ic_chameleon_one,
+                    gender = Gender.FEMALE
                 )
             ),
             openDetail = {}

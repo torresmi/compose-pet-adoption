@@ -25,6 +25,7 @@ val CHAMELEONS = generateSequence {
         name = faker.lordOfTheRings().character(),
         location = faker.lordOfTheRings().location(),
         species = faker.options().option(Species::class.java),
+        gender = faker.options().option(Gender::class.java),
         image = R.drawable.ic_chameleon_seven
     )
 }
@@ -43,7 +44,8 @@ data class Chameleon(
     val name: String,
     val location: String,
     val species: Species,
-    @DrawableRes val image: Int
+    @DrawableRes val image: Int,
+    val gender: Gender
 )
 
 enum class Species {
@@ -67,5 +69,17 @@ enum class Species {
                 it.toLowerCase(locale)
                     .capitalize(locale)
             }
+    }
+}
+
+enum class Gender {
+    MALE,
+    FEMALE;
+
+    fun prettyPrint(): String {
+        val locale = Locale.getDefault()
+        return name
+            .toLowerCase(locale)
+            .capitalize(locale)
     }
 }
