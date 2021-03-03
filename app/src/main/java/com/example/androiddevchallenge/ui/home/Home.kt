@@ -1,17 +1,21 @@
 package com.example.androiddevchallenge.ui.home
 
 import android.util.Log
-import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.PushPin
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -24,6 +28,7 @@ import com.example.androiddevchallenge.data.Chameleon
 import com.example.androiddevchallenge.data.Species
 import com.example.androiddevchallenge.ui.PrimaryText
 import com.example.androiddevchallenge.ui.SecondaryText
+import com.example.androiddevchallenge.ui.detail.Detail
 import com.example.androiddevchallenge.ui.theme.AppTheme
 import com.example.androiddevchallenge.ui.theme.gray200
 import com.example.androiddevchallenge.ui.theme.gray700
@@ -40,11 +45,10 @@ fun Home(
         topBar = {
             TopAppBar(
                 title = { Text(text = stringResource(id = R.string.home_title)) },
-                elevation = 12.dp,
+                elevation = 4.dp,
             )
         },
         content = {
-            Log.d("Home", it.toString())
             LazyVerticalGrid(
                 contentPadding = PaddingValues(
                     start = 4.dp,
@@ -58,7 +62,7 @@ fun Home(
                     Item(darkTheme, item, openDetail)
                 }
             }
-        }
+        },
     )
 }
 

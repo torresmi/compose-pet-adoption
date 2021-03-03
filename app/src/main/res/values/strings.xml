@@ -11,4 +11,6 @@
       -->
     <string name="app_name">AndroidDevChallenge</string>
     <string name="home_title">Chameleon Adoption</string>
+    <string name="detail_location_title">Location</string>
+    <string name="detail_species_title">Species</string>
 </resources>
