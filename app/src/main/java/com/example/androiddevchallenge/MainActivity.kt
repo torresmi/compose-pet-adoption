@@ -19,18 +19,13 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.isSystemInDarkTheme
-import com.example.androiddevchallenge.data.CHAMELEONS
-import com.example.androiddevchallenge.ui.home.Home
-import com.example.androiddevchallenge.ui.theme.MyTheme
+import com.example.androiddevchallenge.ui.ChameleonAdoptionApp
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val darkTheme = isSystemInDarkTheme()
-            MyTheme(darkTheme) {
-                Home(darkTheme, CHAMELEONS.values.toList())
-            }
+            ChameleonAdoptionApp(darkTheme = isSystemInDarkTheme())
         }
     }
 }
